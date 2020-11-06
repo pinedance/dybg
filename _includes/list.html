@@ -1,0 +1,13 @@
+{% assign items = site[ include.type ] %}
+<!-- {% if site.paginate > 0 %}{% assign pages = paginator.pages %}{% endif %} -->
+
+<section id="posts" class="posts-expand">
+
+{% for item in items %}
+  {% assign is_index = true %}
+  {% include _macro/item.html item=item %}
+{% endfor %}
+
+</section>
+
+{% include _partials/pagination.html %}
